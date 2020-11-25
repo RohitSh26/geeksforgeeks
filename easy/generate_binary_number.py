@@ -6,9 +6,38 @@ Function Arguments :
 '''
 def generate(N):
     # code here
-    return
+    output = []
 
+    from queue import Queue
 
+    q = Queue()
+
+    q.put('1')
+
+    while N > 0:
+        N -= 1
+        print(q.queue)
+        first = q.get()
+        
+        #1 ->1
+        #   ->10, 11
+        #10 
+        #   ->11, 100, 101 
+        #11
+        #   ->100, 101, 110, 111
+        #100
+        #   ->101, 110, 111, 1000, 1001
+        #101
+        #   ->110, 111, 1000, 1001, 1010, 1011
+
+        output.append(first)
+        second = first
+        q.put(first + '0')
+        q.put(second + '1')
+    
+    return output
+
+# f = 1 fS 10 fSf 101 fSfS 1010
 
 #{ 
 #  Driver Code Starts
@@ -37,4 +66,6 @@ if __name__ == '__main__':
         for i in range (len (res)):
             print (res[i], end=" ")
         print()
+    
+    # print(generate(N=6))
 # } Driver Code Ends
