@@ -28,7 +28,7 @@ if __name__ == '__main__':
     for i in range(T):
         S = input()
         ob = Solution()
-        answer = ob.firstAlphabet1(S)
+        answer = ob.firstAlphabet_better(S)
 
         print(answer)
 
